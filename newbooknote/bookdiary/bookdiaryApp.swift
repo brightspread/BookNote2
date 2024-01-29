@@ -1,6 +1,6 @@
 //
-//  newbooknoteApp.swift
-//  newbooknote
+//  bookdiaryApp.swift
+//  bookdiary
 //
 //  Created by Leo on 1/27/24.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct newbooknoteApp: App {
+struct bookdiaryApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
