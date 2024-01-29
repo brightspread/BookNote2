@@ -55,7 +55,7 @@ struct SearchStore {
                 case let .searchResponse(.success(response)):
                     state.results = response
                     return .none
-                case let .searchResultTapped(booksearch):
+                case let .searchResultTapped(book):
                     return .none
             }
         }
