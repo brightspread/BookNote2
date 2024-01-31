@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct bookdiaryApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SearchView(store: Store(
+                initialState: SearchStore.State()){
+                    SearchStore()
+                        ._printChanges()
+                }
+            )
         }
     }
 }

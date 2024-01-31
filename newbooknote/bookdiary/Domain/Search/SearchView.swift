@@ -15,30 +15,8 @@ struct SearchView: View {
         NavigationStack {
 
             VStack {
-                HStack {
-                    Image(systemName: "magnifyingglass")
-
-                    TextField("Text", text: $store.searchQuery.sending(\.searchQueryChanged)
-                    )
-                    .textFieldStyle(.roundedBorder)
-                    .textInputAutocapitalization(.never)
-                    .autocorrectionDisabled()
-                }
-
-                List {
-                    ForEach(store.results) { book in
-                        VStack(alignment: .leading) {
-                            Button {
-                                store.send(.searchResultTapped(book))
-                            } label: {
-                                HStack {
-                                    Text(book.title)
-                                }
-                            }
-                        }
-
-                    }
-                }
+                SearchTextField(store: store)
+                SearchItemList(store: store)
             }
         }
     }

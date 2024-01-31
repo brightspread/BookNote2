@@ -48,13 +48,16 @@ struct SearchStore {
                         }))
                     }
                     .cancellable(id: CancelID.book)
+
                 case .searchResponse(.failure):
                     state.results = []
                     //TODO:
                     return .none
+
                 case let .searchResponse(.success(response)):
                     state.results = response
                     return .none
+
                 case let .searchResultTapped(book):
                     return .none
             }
